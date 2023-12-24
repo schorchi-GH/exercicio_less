@@ -1,0 +1,140 @@
+@import "maps";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+}
+
+body {
+    background-color: @colors[background];
+}
+
+li {
+    list-style: none;
+}
+
+.container {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center; // Centraliza o conteúdo
+}
+
+header {
+    background-color: @colors[headerBg];
+    position: sticky;
+    top: 0;
+    left: 0;
+    color: #fff; // Cor branca para o texto no cabeçalho
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu li {
+    font-weight: bold;
+    margin-left: 24px;
+}
+
+.menu li a {
+    color: @colors[menuLink];
+    text-decoration: none;
+}
+
+section {
+    padding: 56px 0;
+}
+
+.products {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    column-gap: 1%;
+    row-gap: 4%;
+    width: 100%;
+}
+
+.product-item {
+    grid-column: 2;
+    text-align: center;
+    margin: 45px;
+
+    img {
+        width: 90px; // Reduz o tamanho da imagem
+        height: 90px; // Mantém a proporção da imagem
+        border-radius: 16px;
+        margin-bottom: 10px; // Espaço abaixo da imagem
+    }
+
+    h3 {
+        color: @colors[secondary]; // Cor do título do produto
+    }
+}
+
+.product-button {
+    display: inline-block;
+    background-color: @colors[primary];
+    color: @colors[menuLink];
+    text-align: center;
+    padding: 6px 10px;
+    font-size: 0.8em;
+    border-radius: 8px;
+    margin-top: 8px;
+    text-decoration: none;
+}
+
+.product-button:hover {
+    background-color: @colors[secondary];
+}
+
+@media screen and (max-width: 1023px) {
+    .container {
+        max-width: 80%;
+    }
+
+    .products {
+        grid-template-columns: repeat(2, 48.5%);
+        column-gap: 3%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .products {
+        display: block;
+    }
+
+    .product-item  {
+        margin-bottom: 32px;
+    }
+}
+
+footer {
+    background-color: @colors[footerBg];
+    color: @colors[footerText];
+}
+
+
+@media screen and (max-width: 767px) {
+    .products {
+        display: block;
+    }
+
+    .product-item  {
+        margin-bottom: 32px;
+    }
+}
+
+footer {
+    background-color: @colors[footerBg];
+    color: @colors[footerText];
+}
